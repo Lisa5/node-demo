@@ -1,0 +1,108 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'link' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.1
+4 verbose linkPkg /Users/yanwang508/Desktop/Lisa/node
+5 silly gentlyRm /usr/local/lib/node_modules/helloworld is being purged
+6 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/helloworld
+7 verbose link build target /usr/local/lib/node_modules/helloworld
+8 silly loadCurrentTree Starting
+9 silly install loadCurrentTree
+10 silly install readLocalPackageData
+11 silly install normalizeTree
+12 silly loadCurrentTree Finishing
+13 silly loadIdealTree Starting
+14 silly install loadIdealTree
+15 silly cloneCurrentTree Starting
+16 silly install cloneCurrentTreeToIdealTree
+17 silly cloneCurrentTree Finishing
+18 silly loadShrinkwrap Starting
+19 silly install loadShrinkwrap
+20 silly loadShrinkwrap Finishing
+21 silly loadAllDepsIntoIdealTree Starting
+22 silly install loadAllDepsIntoIdealTree
+23 silly loadAllDepsIntoIdealTree Finishing
+24 silly loadIdealTree Finishing
+25 silly currentTree helloworld@
+26 silly idealTree helloworld@
+27 silly generateActionsToTake Starting
+28 silly install generateActionsToTake
+29 silly generateActionsToTake Finishing
+30 silly diffTrees action count 0
+31 silly decomposeActions action count 0
+32 silly runTopLevelLifecycles Starting
+33 silly install runPreinstallTopLevelLifecycles
+34 silly preinstall helloworld@ /Users/yanwang508/Desktop/Lisa/node/helloworld-8df8f00f
+35 info lifecycle helloworld@~preinstall: helloworld@
+36 silly lifecycle helloworld@~preinstall: no script for preinstall, continuing
+37 silly executeActions Starting
+38 silly install executeActions
+39 silly doSerial global-install 0
+40 silly doParallel fetch 0
+41 verbose correctMkdir /Users/yanwang508/.npm/_locks correctMkdir not in flight; initializing
+42 verbose lock using /Users/yanwang508/.npm/_locks/staging-b2df14c644c959ee.lock for /Users/yanwang508/Desktop/Lisa/node/node_modules/.staging
+43 silly doParallel extract 0
+44 silly doParallel preinstall 0
+45 silly doReverseSerial remove 0
+46 silly doSerial move 0
+47 silly doSerial finalize 0
+48 silly doSerial build 0
+49 silly doSerial global-link 0
+50 silly doParallel update-linked 0
+51 silly doSerial install 0
+52 silly doSerial postinstall 0
+53 verbose unlock done using /Users/yanwang508/.npm/_locks/staging-b2df14c644c959ee.lock for /Users/yanwang508/Desktop/Lisa/node/node_modules/.staging
+54 silly executeActions Finishing
+55 silly rollbackFailedOptional Starting
+56 silly rollbackFailedOptional Finishing
+57 silly install runPostinstallTopLevelLifecycles
+58 silly build helloworld@
+59 info linkStuff helloworld@
+60 silly linkStuff helloworld@ has /Users/yanwang508/Desktop/Lisa as its parent node_modules
+61 verbose linkBins helloworld@
+62 verbose linkMans helloworld@
+63 silly install helloworld@ /Users/yanwang508/Desktop/Lisa/node/helloworld-8df8f00f
+64 info lifecycle helloworld@~install: helloworld@
+65 silly lifecycle helloworld@~install: no script for install, continuing
+66 silly postinstall helloworld@ /Users/yanwang508/Desktop/Lisa/node/helloworld-8df8f00f
+67 info lifecycle helloworld@~postinstall: helloworld@
+68 silly lifecycle helloworld@~postinstall: no script for postinstall, continuing
+69 silly prepublish helloworld@ /Users/yanwang508/Desktop/Lisa/node/helloworld-8df8f00f
+70 info lifecycle helloworld@~prepublish: helloworld@
+71 silly lifecycle helloworld@~prepublish: no script for prepublish, continuing
+72 silly runTopLevelLifecycles Finishing
+73 silly install printInstalled
+74 warn helloworld@ No description
+75 verbose If you need help, you may report this error at:
+75 verbose     <https://github.com/npm/npm/issues>
+76 warn helloworld@ No repository field.
+77 verbose If you need help, you may report this error at:
+77 verbose     <https://github.com/npm/npm/issues>
+78 warn helloworld@ No license field.
+79 verbose If you need help, you may report this error at:
+79 verbose     <https://github.com/npm/npm/issues>
+80 info build /usr/local/lib/node_modules/helloworld
+81 info linkStuff helloworld@
+82 silly linkStuff helloworld@ has /usr/local/lib/node_modules as its parent node_modules
+83 silly linkStuff helloworld@ is part of a global install
+84 silly linkStuff helloworld@ is installed into a global node_modules
+85 silly linkStuff helloworld@ is installed into the top-level global node_modules
+86 verbose linkBins helloworld@
+87 verbose link bins [ { helloworld: 'helloworld' }, '/usr/local/bin', true ]
+88 verbose linkMans helloworld@
+89 verbose stack Error: ENOENT: no such file or directory, chmod '/usr/local/lib/node_modules/helloworld/helloworld'
+89 verbose stack     at Error (native)
+90 verbose cwd /Users/yanwang508/Desktop/Lisa/node
+91 error Darwin 16.7.0
+92 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "link"
+93 error node v6.11.1
+94 error npm  v3.10.10
+95 error path /usr/local/lib/node_modules/helloworld/helloworld
+96 error code ENOENT
+97 error errno -2
+98 error syscall chmod
+99 error enoent ENOENT: no such file or directory, chmod '/usr/local/lib/node_modules/helloworld/helloworld'
+100 error enoent ENOENT: no such file or directory, chmod '/usr/local/lib/node_modules/helloworld/helloworld'
+100 error enoent This is most likely not a problem with npm itself
+100 error enoent and is related to npm not being able to find a file.
+101 verbose exit [ -2, true ]

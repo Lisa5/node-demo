@@ -1,0 +1,6 @@
+{
+    "name" : "helloworld",
+    "bin": {
+        "helloworld": "helloworld"
+    }
+}

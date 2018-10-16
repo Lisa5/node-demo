@@ -1,10 +1,11 @@
 var server = require('./server');
 var router = require('./router');
-var requesthandles = require('./requestHandlers');
+var requestHandles = require('./requestHandlers');
 
 var handle = {};
-handle['/'] = requesthandles.start;
-handle['/start'] = requesthandles.start;
-handle['/upload'] = requesthandles.upload;
+handle['/'] = requestHandles.start;
+handle['/start'] = requestHandles.start;
+handle['/upload'] = requestHandles.upload;
+handle["/show"] = requestHandles.show;
 
 server.start(router.route, handle);

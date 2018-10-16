@@ -1,6 +1,9 @@
-var exec = require("child_process").exec;
+// var exec = require("child_process").exec;
+  
+var formidable = require('formidable'),
+    fs = require('fs');
 
-function start(response) {
+function start(response, postData) {
     console.log('*********start router*********');
     /** 阻塞操作 */
     // function sleep(milliSeconds) {
@@ -31,9 +34,9 @@ function start(response) {
     'charset=UTF-8" />'+
     '</head>'+
     '<body>'+
-    '<form action="/upload" method="post">'+
-    '<textarea name="text" rows="20" cols="60"></textarea>'+
-    '<input type="submit" value="Submit text" />'+
+    '<form action="/upload" enctype="multipart/form-data" method="post">'+
+    '<input type="file" name="upload">'+
+    '<input type="submit" value="Upload file" />'+
     '</form>'+
     '</body>'+
     '</html>';
@@ -42,12 +45,36 @@ function start(response) {
     response.end();
 }
 
-function upload(response) {
+function upload(response, request) {
     console.log('*********upload router*********');
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello Upload");
-    response.end();
+    var form = new formidable.IncomingForm();
+    console.log("about to parse");
+    form.parse(request, function(err, fields, files) {
+        console.log("parsing done");
+        fs.renameSync(files.upload.path, "tmp/test.jpeg"); // 读取上传的文件并存储到http服务器路径：tmp/test.jpeg
+        response.writeHead(500, {"Content-Type": "text/html"});
+        response.write("received image:<br/>");
+        response.write("<img src='/show' />");
+        response.end();
+    });
 }
+
+// 读取服务器文件并显示（tmp/test.jpeg）
+function show(response, postData) {
+    console.log("Request handler 'show' was called.");
+    fs.readFile("tmp/test.jpeg", "binary", function(error, file) {
+      if(error) {
+        response.writeHead(500, {"Content-Type": "text/plain"});
+        response.write(error + "\n");
+        response.end();
+      } else {
+        response.writeHead(200, {"Content-Type": "image/png"});
+        response.write(file, "binary");
+        response.end();
+      }
+    });
+  }
 
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
